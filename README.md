@@ -127,4 +127,91 @@ Build index for newly ordered genome
 $ module load bowtie2
 $ mkdir ../Bowtie2Index
 $ nohup bowtie2-build genome.fa ../Bowtie2Index/genome &
+
+$ cd ../Bowtie2Index
+$ ln -s ../WholeGenomeFasta/genome.fa .
+```
+
+Do the similar thing for hg38
+
+```bash
+$ mkdir -p ref/hg/hg38/Homo_sapiens/UCSC/hg38_22XYM_order/Sequence/WholeGenomeFasta
+
+$ cd ref/hg/hg38/Homo_sapiens/UCSC/hg38_22XYM_order/Sequence/WholeGenomeFasta
+
+$ cp ~/luod_scratch/ref/hg/hg38/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa .
+
+$ grep -n '>' genome.fa
+1:>chr1
+4979131:>chr2
+9823003:>chr3
+13788916:>chr4
+17593209:>chr5
+21223976:>chr6
+24640097:>chr7
+27827018:>chr8
+30729792:>chr9
+33497688:>chr10
+36173638:>chr11
+38875372:>chr12
+41540880:>chr13
+43828168:>chr14
+45969044:>chr15
+48008869:>chr16
+49815637:>chr17
+51480787:>chr18
+53088254:>chr19
+54260608:>chr20
+55549493:>chr21
+56483694:>chr22
+57500065:>chrX
+60620884:>chrY
+61765434:>chrM
+61765767:>chr1_KI270706v1_random
+61769270:>chr1_KI270707v1_random
+61769912:>chr1_KI270708v1_random
+...
+61988540:>chrUn_GL000216v2
+61992074:>chrUn_GL000218v1
+61995298:>chrEBV
+
+$ sed -i '61765767,$d' genome.fa
+
+$ grep -n '>' genome.fa
+1:>chr1
+4979131:>chr2
+9823003:>chr3
+13788916:>chr4
+17593209:>chr5
+21223976:>chr6
+24640097:>chr7
+27827018:>chr8
+30729792:>chr9
+33497688:>chr10
+36173638:>chr11
+38875372:>chr12
+41540880:>chr13
+43828168:>chr14
+45969044:>chr15
+48008869:>chr16
+49815637:>chr17
+51480787:>chr18
+53088254:>chr19
+54260608:>chr20
+55549493:>chr21
+56483694:>chr22
+57500065:>chrX
+60620884:>chrY
+61765434:>chrM
+```
+
+Build index for newly ordered genome
+
+```bash
+$ module load bowtie2
+$ mkdir ../Bowtie2Index
+$ nohup bowtie2-build genome.fa ../Bowtie2Index/genome &
+
+$ cd ../Bowtie2Index
+$ ln -s ../WholeGenomeFasta/genome.fa .
 ```
