@@ -120,3 +120,11 @@ $ du genome.fa
 $ du REF/hg/hg19/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFasta/genome.fa
 3083776	REF/hg/hg19/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFasta/genome.fa
 ```
+
+Build index for newly ordered genome
+
+```bash
+$ module load bowtie2
+$ mkdir ../Bowtie2Index
+$ nohup bowtie2-build genome.fa ../Bowtie2Index/genome &
+```
