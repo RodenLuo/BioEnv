@@ -499,6 +499,22 @@ Build Bowtie2 index for it.
 $ nohup bowtie2-build genome.fa ../Bowtie2Index/genome &
 ```
 
+Build BWA index for all modified genome.
+```bash
+$ mkdir hg19_M22XY_order/Sequence/BWAIndex
+
+$ module load bwa
+Loading module for BWA
+BWA 0.7.17 is now loaded
+$ bwa
+
+Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+$ mkdir hg19_M22XY_order/Sequence/BWAIndex/version0.7.17-r1188
+$ cd hg19_M22XY_order/Sequence/BWAIndex/version0.7.17-r1188
+$ ln -s ../../WholeGenomeFasta/genome.fa .
+$ nohup bwa index genome.fa &
+```
 
 
 Cleaned the directory struncture to remove redundant file folders. Final file tree.
