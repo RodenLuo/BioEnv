@@ -7,7 +7,7 @@ Bioinformatics Environments
 
 For hg19
 
-Download from iGenomes @ illumina
+Download from [iGenomes @ illumina](https://support.illumina.com/sequencing/sequencing_software/igenome.html)
 ```bash
 $ wget ftp://igenome:G3nom3s4u@ussd-ftp.illumina.com/Homo_sapiens/UCSC/hg19/Homo_sapiens_UCSC_hg19.tar.gz
 $ tar -zxvf Homo_sapiens_UCSC_hg19.tar.gz
